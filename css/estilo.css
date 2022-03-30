@@ -1,7 +1,20 @@
+:root{
+  --blanco: #ffffff;
+  --primario: #ffc107;
+  --secundario: #0097a7;
+  --gris: #757575;
+  --oscuro: #212121;
+}
+
 html {
 	box-sizing: border-box;
 	min-height: 100%;
+ /* scroll-snap-type: y mandatory;*/
 }
+
+*, *:before, *:after {
+  box-sizing: inherit;
+} 
 
 p {
 	line-height: 2;
@@ -28,4 +41,107 @@ h3 {
 	color: var(--secundario);
 	font-weight: 400;
 	font-size: 1.6rem;
+}
+
+.contenedor {
+  margin: 0 auto;
+  max-width:1200px;
+}
+
+.nav-bg {
+  background-color: var(--secundario);
+}
+
+.navegacion {
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width:768px) {
+  .navegacion {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.navegacion a{
+  padding: 1rem 2rem;
+  color: var(--blanco);
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.navegacion a:hover{
+  background-color: var(--primario);
+  color: var(--oscuro);
+}
+
+.navegacion a:last-of-type{
+  margin-bottom: 0;
+}
+
+@media (min-height:768px){
+  .navegacion {
+    margin-bottom: 0;
+  }
+}
+
+.hero {
+  height: 450px;
+  background-image: url(css/hero.jpg);
+  margin-bottom: 2rem;
+  position:relative;
+}
+
+.contenido-hero {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  width: 100%;
+   height: 100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  }
+
+.contenido-hero h2, .contenido-hero p{
+  color: var(--blanco);
+}
+
+.boton{
+  background-color: var(--secundario);
+  color: var(--blanco);
+  marging:0.5rem;
+  padding: 0.5rem 3rem;
+  border-radius: 5px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  border: none
+}
+
+.boton:hover{
+  cursor: pointer;
+}
+
+.servicios {
+  scroll-snap-alig: center;
+  scroll-snap-stop: always;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width:768px){
+  .servicios{
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    column-gap: 1rem;
+  }
 }
